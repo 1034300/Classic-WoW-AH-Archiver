@@ -11,7 +11,7 @@ import schedule
 # Base URL for the nexushub API
 API = 'https://api.nexushub.co/wow-classic/v1'
 # The server/faction market to pull data for
-AH = 'faerlina-alliance'
+AH = 'earthshaker-horde'
 
 class Subscriber:
     def __init__(self, API: str, auction_house: str, database='ah.db'):
@@ -85,7 +85,7 @@ class Subscriber:
         resp_dict = json.loads(r.text)
 
         # Slug index contains WoW server name/faction pair
-        # ("faerlina-alliance")
+        # ("earthshaker-horde")
         slug = resp_dict['slug']
 
         print("[overview/INSERT]: retrieved new overview from scan_id",
